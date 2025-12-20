@@ -1,0 +1,14 @@
+body {
+    font-family: "Prompt", sans-serif;
+    font-size: 16px;
+    color: #222;
+}
+
+.background-page {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.background-page-dark {
+    min-height: 100vh;
+}
