@@ -37,4 +37,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    public: {
+      API_URL: process.env.API_URL,
+      OMISE_PUBLIC: process.env.OMISE_PUBLIC,
+      API_LOCATION: process.env.API_LOCATION,
+    },
+    OMISE_SECRET: process.env.OMISE_SECRET,
+  },
 });
