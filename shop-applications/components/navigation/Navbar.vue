@@ -14,6 +14,7 @@
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
+      <NavigationSidePanel />
     </v-app-bar>
   </div>
 </template>
