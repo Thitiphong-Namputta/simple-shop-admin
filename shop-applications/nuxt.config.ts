@@ -29,6 +29,16 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  modules: [
+    (_options, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }));
+      });
+    },
+    "@nuxtjs/i18n",
+    "dayjs-nuxt",
+  ],
   vite: {
     plugins: [vuetify({ autoImport: true })],
     vue: {
@@ -36,6 +46,22 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+  },
+  i18n: {
+    strategy: "no_prefix",
+    locales: [
+      {
+        code: "en",
+        name: "English",
+        files: ["en-US.ts"],
+      },
+      {
+        code: "th",
+        name: "ไทย",
+        files: ["th-TH.ts"],
+      },
+    ],
+    defaultLocale: "th",
   },
   runtimeConfig: {
     public: {
